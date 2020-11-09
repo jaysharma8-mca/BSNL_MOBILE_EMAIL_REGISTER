@@ -194,9 +194,6 @@ public class LoginPage_Activity extends AppCompatActivity {
                         //System.exit(0);
                     }
 
-                    private void close() {
-                        finish();
-                    }
                 })
                 .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
                     @Override
