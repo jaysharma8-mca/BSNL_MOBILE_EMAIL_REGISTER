@@ -10,22 +10,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.error.VolleyError;
 import com.android.volley.request.StringRequest;
+import com.google.android.material.snackbar.Snackbar;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
@@ -34,8 +31,6 @@ import com.mobileemail_register.MISC.RequestHandler;
 import com.mobileemail_register.R;
 import com.mobileemail_register.SDEFIELDLIST_ASSIGNED_ACTIVITY.SdeConfiguredLm_SQLiteHelper;
 import com.mobileemail_register.SDEFIELDLIST_ASSIGNED_ACTIVITY.SdeFieldListGetAssignedReport_Activity;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,7 +85,7 @@ public class SdeFieldList_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sde_field_list);
 
-        AppCenter.start(getApplication(), "15ee0d52-7eb0-4aa2-9ec5-40b1491add0e",
+        AppCenter.start(getApplication(), "f7271b3f-27aa-4985-8654-37f1347f4bf4",
                 Analytics.class, Crashes.class);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -222,12 +217,12 @@ public class SdeFieldList_Activity extends AppCompatActivity {
         sdeFieldList_sqLiteHelper.close();
     }
 
+    @SuppressLint("SetTextI18n")
     private void setData()
     {
         SharedPreferences sharedPreferences = getSharedPreferences(SP_MEREG, Context.MODE_PRIVATE);
         final String TGT = "TGT";
         final String TTL_CON = "TTL_CON";
-        final String NAME = "NAME";
         final String target = sharedPreferences.getString(TGT, null);
         final String ttl_con = sharedPreferences.getString(TTL_CON, null);
 
@@ -275,6 +270,7 @@ public class SdeFieldList_Activity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     private class AsyncTaskRunner extends AsyncTask<String, String, String> {
 
         @Override
@@ -328,107 +324,100 @@ public class SdeFieldList_Activity extends AppCompatActivity {
                 URL = URL.replaceAll(" ", "%20");
                 StringRequest stringRequest = new StringRequest(Request.Method.GET,
                         URL,
-                        new Response.Listener<String>() {
-                            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                            @Override
-                            public void onResponse(String response) {
+                        response -> {
 
-                                if (response.contains("ORA-")) {
-                                    alertDialog.dismiss();
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(SdeFieldList_Activity.this);
+                            if (response.contains("ORA-")) {
+                                alertDialog.dismiss();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(SdeFieldList_Activity.this);
 
-                                    builder.setTitle("Fetching Failed");
-                                    builder.setMessage("FMS Database Connectivity Error... Please Try again After Sometime...");
-                                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
+                                builder.setTitle("Fetching Failed");
+                                builder.setMessage("FMS Database Connectivity Error... Please Try again After Sometime...");
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                    }
+                                });
+
+                                builder.show();
+                            } else {
+
+                                try {
+                                    //sdeFieldList_sqLiteHelper.deleteUsers();
+                                    JSONObject json = new JSONObject(response);
+
+                                    //now get your  json array like this
+                                    JSONArray jsonArray = json.getJSONArray("ROWSET");
+
+
+                                    user_perno = new ArrayList<>();
+                                    lm_code = new ArrayList<>();
+                                    lm_perno = new ArrayList<>();
+                                    ttl_con = new ArrayList<>();
+                                    tgt = new ArrayList<>();
+                                    lmc_assigned = new ArrayList<>();
+                                    lmc_assigned_to_text = new ArrayList<>();
+                                    assigned_flag = new ArrayList<>();
+                                    deassigned_flag = new ArrayList<>();
+                                    sync_status_flag = new ArrayList<>();
+
+
+                                    if (jsonArray.length() > 0) {
+
+                                        for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
+
+                                            JSONObject jsonObject = jsonArray.getJSONObject(countItem);
+
+                                            user_perno.add(personal_number);
+                                            lm_code.add(jsonObject.isNull("LM_CODE") ? "" : jsonObject.optString("LM_CODE"));
+                                            lm_perno.add(jsonObject.isNull("LM_PER_NO") ? "" : jsonObject.optString("LM_PER_NO"));
+                                            ttl_con.add(jsonObject.isNull("TTL_CON") ? "" : jsonObject.optString("TTL_CON"));
+                                            tgt.add(jsonObject.isNull("TGT") ? "" : jsonObject.optString("TGT"));
+                                            lmc_assigned.add(" ");
+                                            lmc_assigned_to_text.add(" ");
+                                            assigned_flag.add(" ");
+                                            deassigned_flag.add(" ");
+                                            sync_status_flag.add("2");
+
+                                            //Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
 
                                         }
-                                    });
 
-                                    builder.show();
-                                } else {
-
-                                    try {
-                                        //sdeFieldList_sqLiteHelper.deleteUsers();
-                                        JSONObject json = new JSONObject(response);
-
-                                        //now get your  json array like this
-                                        JSONArray jsonArray = json.getJSONArray("ROWSET");
+                                        sqlite();
 
 
-                                        user_perno = new ArrayList<>();
-                                        lm_code = new ArrayList<>();
-                                        lm_perno = new ArrayList<>();
-                                        ttl_con = new ArrayList<>();
-                                        tgt = new ArrayList<>();
-                                        lmc_assigned = new ArrayList<>();
-                                        lmc_assigned_to_text = new ArrayList<>();
-                                        assigned_flag = new ArrayList<>();
-                                        deassigned_flag = new ArrayList<>();
-                                        sync_status_flag = new ArrayList<>();
+                                        sdeFieldList_sqLiteHelper.close();
+                                        getSumTTLCON();
+                                        getSumTGT();
+                                        setData();
 
-
-                                        if (jsonArray.length() > 0) {
-
-                                            for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
-
-                                                JSONObject jsonObject = jsonArray.getJSONObject(countItem);
-
-                                                user_perno.add(personal_number);
-                                                lm_code.add(jsonObject.isNull("LM_CODE") ? "" : jsonObject.optString("LM_CODE"));
-                                                lm_perno.add(jsonObject.isNull("LM_PER_NO") ? "" : jsonObject.optString("LM_PER_NO"));
-                                                ttl_con.add(jsonObject.isNull("TTL_CON") ? "" : jsonObject.optString("TTL_CON"));
-                                                tgt.add(jsonObject.isNull("TGT") ? "" : jsonObject.optString("TGT"));
-                                                lmc_assigned.add(" ");
-                                                lmc_assigned_to_text.add(" ");
-                                                assigned_flag.add(" ");
-                                                deassigned_flag.add(" ");
-                                                sync_status_flag.add("2");
-
-                                                //Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
-
-                                            }
-
-                                            sqlite();
-
-
-                                            sdeFieldList_sqLiteHelper.close();
-                                            getSumTTLCON();
-                                            getSumTGT();
-                                            setData();
-
-                                            if(alertDialog != null)
-                                            {
-                                                alertDialog.dismiss();
-                                            }
-
-
-                                        } else {
-                                            if(alertDialog != null)
-                                            {
-                                                alertDialog.dismiss();
-                                            }
-                                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                                        if(alertDialog != null)
+                                        {
+                                            alertDialog.dismiss();
                                         }
 
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
+
+                                    } else {
+                                        if(alertDialog != null)
+                                        {
+                                            alertDialog.dismiss();
+                                        }
+                                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
                                     }
 
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
 
-                                //Toast.makeText(getApplicationContext(), "Respnse :" + response, Toast.LENGTH_LONG).show();
                             }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
 
-                                Toast.makeText(SdeFieldList_Activity.this, "Database Connectivity Error!!! Check Your Network Connection And Try Again...", Toast.LENGTH_LONG).show();
-                                if(alertDialog != null)
-                                {
-                                    alertDialog.dismiss();
-                                }
+                            //Toast.makeText(getApplicationContext(), "Respnse :" + response, Toast.LENGTH_LONG).show();
+                        },
+                        error -> {
+
+                            Toast.makeText(SdeFieldList_Activity.this, "Database Connectivity Error!!! Check Your Network Connection And Try Again...", Toast.LENGTH_LONG).show();
+                            if(alertDialog != null)
+                            {
+                                alertDialog.dismiss();
                             }
                         }) {
                     @Override
@@ -452,15 +441,13 @@ public class SdeFieldList_Activity extends AppCompatActivity {
 
             else
             {
-               this.runOnUiThread(new Runnable() {
-                    public void run() {
-                        Snackbar.make(findViewById(android.R.id.content), "No PER NO Found... Kindly Reregister...", Snackbar.LENGTH_LONG).show();
-                        if(alertDialog != null)
-                        {
-                            alertDialog.dismiss();
-                        }
-                    }
-                });
+               this.runOnUiThread(() -> {
+                   Snackbar.make(findViewById(android.R.id.content), "No PER NO Found... Kindly Reregister...", Snackbar.LENGTH_LONG).show();
+                   if(alertDialog != null)
+                   {
+                       alertDialog.dismiss();
+                   }
+               });
 
                 //Toast.makeText(getApplicationContext(),"No PER NO Found... Kindly Reregister...",Toast.LENGTH_LONG).show();
             }
@@ -489,121 +476,113 @@ public class SdeFieldList_Activity extends AppCompatActivity {
                 URL = URL.replaceAll(" ", "%20");
                 StringRequest stringRequest = new StringRequest(Request.Method.GET,
                         URL,
-                        new Response.Listener<String>() {
-                            @SuppressLint("SetTextI18n")
-                            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                            @Override
-                            public void onResponse(String response) {
+                        response -> {
 
-                                if (response.contains("ORA-")) {
-                                    alertDialog.dismiss();
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(SdeFieldList_Activity.this);
+                            if (response.contains("ORA-")) {
+                                alertDialog.dismiss();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(SdeFieldList_Activity.this);
 
-                                    builder.setTitle("Fetching Failed");
-                                    builder.setMessage("FMS Database Connectivity Error... Please Try again After Sometime...");
-                                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
+                                builder.setTitle("Fetching Failed");
+                                builder.setMessage("FMS Database Connectivity Error... Please Try again After Sometime...");
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                    }
+                                });
+
+                                builder.show();
+                            } else {
+
+                                try {
+                                    //getting the whole json object from the response
+                                    JSONObject jsonObject = new JSONObject(response);
+                                    if (jsonObject.getString("STATUS").contentEquals("SUCCESS")) {
+
+                                        JSONArray jsonArray = jsonObject.getJSONArray("ROWSET");
+
+
+                                        PRIMARY_LM = new ArrayList<>();
+                                        ASSIGNED_DATE = new ArrayList<>();
+                                        PER_NO = new ArrayList<>();
+                                        ASSIGNED_LM = new ArrayList<>();
+                                        DEASSIGNMENT_FLAG = new ArrayList<>();
+
+
+                                        if (jsonArray.length() > 0) {
+                                            for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
+
+                                                jsonObject = jsonArray.getJSONObject(countItem);
+
+
+                                                PRIMARY_LM.add(jsonObject.isNull("PRIMARY_LM") ? "" : jsonObject.optString("PRIMARY_LM"));
+                                                ASSIGNED_DATE.add(jsonObject.isNull("ASSIGNED_DATE") ? "" : jsonObject.optString("ASSIGNED_DATE"));
+                                                PER_NO.add(jsonObject.isNull("PER_NO") ? "" : jsonObject.optString("PER_NO"));
+                                                ASSIGNED_LM.add(jsonObject.isNull("ASSIGNED_LM") ? "" : jsonObject.optString("ASSIGNED_LM"));
+                                                DEASSIGNMENT_FLAG.add(" ");
+
+
+                                                //Toast.makeText(getApplicationContext(), "DATA UPDATED SUCCESSFULLY !!!", Toast.LENGTH_LONG).show();
+
+                                            }
+
+                                            Assignedsqlite();
+                                            if (alertDialog != null) {
+                                                alertDialog.dismiss();
+                                            }
+
+
+
+                                            int profile_counts = (int) sdeConfiguredLm_sqLiteHelper.getProfilesCount();
+                                            String counts = String.valueOf(profile_counts);
+
+
+                                            if(counts != null)
+                                            {
+                                                textViewAssignedCount.setText(""+profile_counts);
+                                            }
+                                            sdeConfiguredLm_sqLiteHelper.close();
+
 
                                         }
-                                    });
-
-                                    builder.show();
-                                } else {
-
-                                    try {
-                                        //getting the whole json object from the response
-                                        JSONObject jsonObject = new JSONObject(response);
-                                        if (jsonObject.getString("STATUS").contentEquals("SUCCESS")) {
-
-                                            JSONArray jsonArray = jsonObject.getJSONArray("ROWSET");
 
 
-                                            PRIMARY_LM = new ArrayList<>();
-                                            ASSIGNED_DATE = new ArrayList<>();
-                                            PER_NO = new ArrayList<>();
-                                            ASSIGNED_LM = new ArrayList<>();
-                                            DEASSIGNMENT_FLAG = new ArrayList<>();
+                                    } else if (jsonObject.getString("STATUS").contentEquals("FAILED")) {
+                                        JSONArray jsonArray = jsonObject.getJSONArray("ROWSET");
+                                        if (jsonArray.length() > 0) {
 
+                                            for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
 
-                                            if (jsonArray.length() > 0) {
-                                                for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
+                                                jsonObject = jsonArray.getJSONObject(countItem);
 
-                                                    jsonObject = jsonArray.getJSONObject(countItem);
+                                                //String STATUS = jsonObject.isNull("STATUS") ? "" : jsonObject.optString("STATUS");
+                                                String REMARKS = jsonObject.isNull("REMARKS") ? "" : jsonObject.optString("REMARKS");
 
-
-                                                    PRIMARY_LM.add(jsonObject.isNull("PRIMARY_LM") ? "" : jsonObject.optString("PRIMARY_LM"));
-                                                    ASSIGNED_DATE.add(jsonObject.isNull("ASSIGNED_DATE") ? "" : jsonObject.optString("ASSIGNED_DATE"));
-                                                    PER_NO.add(jsonObject.isNull("PER_NO") ? "" : jsonObject.optString("PER_NO"));
-                                                    ASSIGNED_LM.add(jsonObject.isNull("ASSIGNED_LM") ? "" : jsonObject.optString("ASSIGNED_LM"));
-                                                    DEASSIGNMENT_FLAG.add(" ");
-
-
-                                                    //Toast.makeText(getApplicationContext(), "DATA UPDATED SUCCESSFULLY !!!", Toast.LENGTH_LONG).show();
-
-                                                }
-
-                                                Assignedsqlite();
+                                                Toast.makeText(getApplicationContext(), REMARKS, Toast.LENGTH_LONG).show();
+                                                //showAlertSuccess(REMARKS);
+                                                sdeConfiguredLm_sqLiteHelper.deleteUsers();
                                                 if (alertDialog != null) {
                                                     alertDialog.dismiss();
                                                 }
 
-
-
-                                                int profile_counts = (int) sdeConfiguredLm_sqLiteHelper.getProfilesCount();
-                                                String counts = String.valueOf(profile_counts);
-
-
-                                                if(counts != null)
-                                                {
-                                                    textViewAssignedCount.setText(""+profile_counts);
-                                                }
-                                                sdeConfiguredLm_sqLiteHelper.close();
-
-
                                             }
 
-
-                                        } else if (jsonObject.getString("STATUS").contentEquals("FAILED")) {
-                                            JSONArray jsonArray = jsonObject.getJSONArray("ROWSET");
-                                            if (jsonArray.length() > 0) {
-
-                                                for (int countItem = 0; countItem < jsonArray.length(); countItem++) {
-
-                                                    jsonObject = jsonArray.getJSONObject(countItem);
-
-                                                    //String STATUS = jsonObject.isNull("STATUS") ? "" : jsonObject.optString("STATUS");
-                                                    String REMARKS = jsonObject.isNull("REMARKS") ? "" : jsonObject.optString("REMARKS");
-
-                                                    Toast.makeText(getApplicationContext(), REMARKS, Toast.LENGTH_LONG).show();
-                                                    //showAlertSuccess(REMARKS);
-                                                    sdeConfiguredLm_sqLiteHelper.deleteUsers();
-                                                    if (alertDialog != null) {
-                                                        alertDialog.dismiss();
-                                                    }
-
-                                                }
-
-                                            }
-
-                                            //onRefresh();
                                         }
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
+
+                                        //onRefresh();
                                     }
-
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
 
-                                //Toast.makeText(getApplicationContext(), "Respnse :" + response, Toast.LENGTH_LONG).show();
                             }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
 
-                                Toast.makeText(SdeFieldList_Activity.this, "Database Connectivity Error!!! Check Your Network Connection And Try Again...", Toast.LENGTH_LONG).show();
-                                if (alertDialog != null) {
-                                    alertDialog.dismiss();
-                                }
+                            //Toast.makeText(getApplicationContext(), "Respnse :" + response, Toast.LENGTH_LONG).show();
+                        },
+                        error -> {
+
+                            Toast.makeText(SdeFieldList_Activity.this, "Database Connectivity Error!!! Check Your Network Connection And Try Again...", Toast.LENGTH_LONG).show();
+                            if (alertDialog != null) {
+                                alertDialog.dismiss();
                             }
                         }) {
                     @Override
@@ -624,13 +603,11 @@ public class SdeFieldList_Activity extends AppCompatActivity {
 
                 RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
             } else {
-                this.runOnUiThread(new Runnable() {
-                    public void run() {
-                        Snackbar.make(findViewById(android.R.id.content), "No PER NO Found... Kindly Reregister...", Snackbar.LENGTH_LONG).show();
-                        if(alertDialog != null)
-                        {
-                            alertDialog.dismiss();
-                        }
+                this.runOnUiThread(() -> {
+                    Snackbar.make(findViewById(android.R.id.content), "No PER NO Found... Kindly Reregister...", Snackbar.LENGTH_LONG).show();
+                    if(alertDialog != null)
+                    {
+                        alertDialog.dismiss();
                     }
                 });
             }

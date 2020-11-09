@@ -48,7 +48,7 @@ public class LoginPage_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page_);
 
-        AppCenter.start(getApplication(), "15ee0d52-7eb0-4aa2-9ec5-40b1491add0e",
+        AppCenter.start(getApplication(), "f7271b3f-27aa-4985-8654-37f1347f4bf4",
                 Analytics.class, Crashes.class);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -194,9 +194,6 @@ public class LoginPage_Activity extends AppCompatActivity {
                         //System.exit(0);
                     }
 
-                    private void close() {
-                        finish();
-                    }
                 })
                 .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
                     @Override

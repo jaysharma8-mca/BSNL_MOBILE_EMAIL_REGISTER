@@ -80,7 +80,7 @@ public class LinemanWorklist_Activity extends AppCompatActivity implements Linem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lineman_worklist);
 
-        AppCenter.start(getApplication(), "15ee0d52-7eb0-4aa2-9ec5-40b1491add0e",
+        AppCenter.start(getApplication(), "f7271b3f-27aa-4985-8654-37f1347f4bf4",
                 Analytics.class, Crashes.class);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
