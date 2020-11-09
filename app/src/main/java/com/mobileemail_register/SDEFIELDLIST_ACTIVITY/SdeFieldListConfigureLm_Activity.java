@@ -97,7 +97,7 @@ public class SdeFieldListConfigureLm_Activity extends AppCompatActivity implemen
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         sdeFieldListConfigureLmReportClass = new ArrayList<>();
-        mAdapter = new SdeFieldListConfigureLm_Adapter(this, sdeFieldListConfigureLmReportClass, this);
+        mAdapter = new SdeFieldListConfigureLm_Adapter(this, sdeFieldListConfigureLmReportClass);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);

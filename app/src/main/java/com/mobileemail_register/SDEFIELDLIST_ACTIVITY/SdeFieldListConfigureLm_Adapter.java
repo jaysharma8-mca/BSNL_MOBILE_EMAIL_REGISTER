@@ -38,11 +38,11 @@ import static com.mobileemail_register.MISC.constants.SYNC_STATUS_FAILED;
 @SuppressWarnings({"Convert2Lambda"})
 public class SdeFieldListConfigureLm_Adapter extends RecyclerView.Adapter<SdeFieldListConfigureLm_Adapter.MyViewHolder> implements Filterable {
 
-    private List<SdeFieldListConfigureLm_ReportClass> configureLmList;
+    private final List<SdeFieldListConfigureLm_ReportClass> configureLmList;
     private List<SdeFieldListConfigureLm_ReportClass> configureLmListFiltered;
 
     public Context context;
-    private String[] spinnerValues = {"SELECT LMC"};
+    private final String[] spinnerValues = {"SELECT LMC"};
     private static final String SP_MEREG = "SP_MEREG";
     private static final String PERNOLM = "PERNOLM";
     private static final String SDELMWL = "SDELMWL";
@@ -92,7 +92,7 @@ public class SdeFieldListConfigureLm_Adapter extends RecyclerView.Adapter<SdeFie
         }
     }
 
-    SdeFieldListConfigureLm_Adapter(Context context, List<SdeFieldListConfigureLm_ReportClass> configureLmList, ContactsAdapterListener listener) {
+    SdeFieldListConfigureLm_Adapter(Context context, List<SdeFieldListConfigureLm_ReportClass> configureLmList) {
         this.context = context;
         this.configureLmList = configureLmList;
         this.configureLmListFiltered = configureLmList;
@@ -118,7 +118,6 @@ public class SdeFieldListConfigureLm_Adapter extends RecyclerView.Adapter<SdeFie
 
         SdeFieldList_SQLiteHelper dbBackend = new SdeFieldList_SQLiteHelper(context);
 
-        String lm_config = (sdeFieldListConfigureLm_reportClass.getLMC_ASSIGNED_TO_TEXT());
         String lm_Perno = (sdeFieldListConfigureLm_reportClass.getLM_PERNO());
         holder.textViewAssignLm.setVisibility(View.INVISIBLE);
         holder.textViewLmCode.setText(sdeFieldListConfigureLm_reportClass.getLM_CODE());
@@ -298,14 +297,7 @@ public class SdeFieldListConfigureLm_Adapter extends RecyclerView.Adapter<SdeFie
             holder.textViewAssignLm.setText(sdeFieldListConfigureLm_reportClass.getLMC_ASSIGNED_TO_TEXT());
         }
 
-        if (holder.spinnerAssignLm.getCount()==2){
-            holder.spinnerAssignLm.setEnabled(false);
-        }
-
-        else
-        {
-            holder.spinnerAssignLm.setEnabled(true);
-        }
+        holder.spinnerAssignLm.setEnabled(holder.spinnerAssignLm.getCount() != 2);
 
         if(!holder.textViewAssignLm.getText().toString().trim().equals(""))
         {

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -186,21 +185,6 @@ public class SdeFieldList_SQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-
-    long getProfilesCount() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        long count = DatabaseUtils.queryNumEntries(db, TABLE_SDE_FIELD_LIST);
-        db.close();
-        return count;
-    }
-
-    public void deleteRowLMWorkList(String lm_perno) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_SDE_FIELD_LIST, LM_PERNO + " = ?",
-                new String[]{String.valueOf(lm_perno)});
-        db.close();
-    }
-
     public void updateData(String selectedItemText, String lm_code, String lm_config,
                            String assigned_deassigned_flag,String sync_status_flag) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -210,27 +194,6 @@ public class SdeFieldList_SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(ASSIGNED_FLAG, assigned_deassigned_flag);
         contentValues.put(SYNC_STATUS_FLAG, sync_status_flag);
         db.update(TABLE_SDE_FIELD_LIST, contentValues, "LM_CODE = ?", new String[]{selectedItemText});
-    }
-
-    public void updateAssignedData(String selectedItemText, String lm_code, String lm_config,
-                                   String assigned_deassigned_flag,String sync_status_flag) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(LMC_ASSIGNED_TO, lm_code);
-        contentValues.put(LMC_ASSIGNED_TO_TEXT, lm_config);
-        contentValues.put(ASSIGNED_FLAG, assigned_deassigned_flag);
-        contentValues.put(SYNC_STATUS_FLAG, sync_status_flag);
-        db.update(TABLE_SDE_FIELD_LIST, contentValues, "LMC_ASSIGNED_TO = ?", new String[]{selectedItemText});
-    }
-
-    public void reassignData(String lm_code, String lmc_assigned_to_text,
-                             String deassigned_flag,String sync_status_flag) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(LMC_ASSIGNED_TO_TEXT, lmc_assigned_to_text);
-        contentValues.put(DEASSIGNED_FLAG, deassigned_flag);
-        contentValues.put(SYNC_STATUS_FLAG, sync_status_flag);
-        db.update(TABLE_SDE_FIELD_LIST, contentValues, "LM_CODE = ?", new String[]{lm_code});
     }
 
 
@@ -247,18 +210,6 @@ public class SdeFieldList_SQLiteHelper extends SQLiteOpenHelper {
     public void updateLocalDatabase(String lm_code,String sync_status) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SYNC_STATUS_FLAG, sync_status);
-        String selection = LM_CODE + " LIKE ?";
-        String[] selection_args = {lm_code};
-        db.update(TABLE_SDE_FIELD_LIST, contentValues, selection, selection_args);
-    }
-
-    public void updateLocalDatabaseDeassignment(String lm_code,String lmc_assigned_to,String lmc_assigned_to_text,String deassigned_flag,String sync_status) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(LMC_ASSIGNED_TO, lmc_assigned_to);
-        contentValues.put(LMC_ASSIGNED_TO_TEXT, lmc_assigned_to_text);
-        contentValues.put(DEASSIGNED_FLAG, deassigned_flag);
         contentValues.put(SYNC_STATUS_FLAG, sync_status);
         String selection = LM_CODE + " LIKE ?";
         String[] selection_args = {lm_code};
