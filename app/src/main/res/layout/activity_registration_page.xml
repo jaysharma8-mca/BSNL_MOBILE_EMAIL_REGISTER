@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".REGISTRATION_ACTIVITY.RegistrationPage_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            tools:ignore="UselessParent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/me_reg_search_subscriber_ui">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/sign_up_font_ui"
+                    android:contentDescription="@string/todo" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.7"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent"
+                android:gravity="center_vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/editTextUserNm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/personal_number"
+                    android:layout_marginEnd="10dp"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:boxStrokeWidth="2dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableLeft="@drawable/user_icon"
+                        android:drawablePadding="5dp"
+                        android:inputType="number"
+                        android:paddingLeft="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/imageViewSendSmsCode"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.12"
+                    android:background="@drawable/resend_sms_code"
+                    android:contentDescription="@string/todo"
+                    android:visibility="invisible"
+                    android:onClick="submitPersonalNumber"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.7">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/employee_name"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:boxStrokeWidth="2dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/ic_target"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:paddingLeft="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.7">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/mobile_number"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:boxStrokeWidth="2dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:inputType="number"
+                        android:drawableLeft="@drawable/ic_mobile_app"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:paddingLeft="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="0.9"
+            android:gravity="center"
+            tools:ignore="DisableBaselineAlignment">
+
+            <RelativeLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_alert_dialogbox"
+                tools:targetApi="lollipop">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    tools:ignore="UselessParent">
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/editTextVerificationCode"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:itemCount="4"
+                        app:itemHeight="30dp"
+                        app:itemSpacing="5dp"
+                        app:itemWidth="30dp"
+                        app:viewType="rectangle" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginEnd="5dp">
+
+                        <ProgressBar
+                            android:id="@+id/progressbar_timerview"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circleshape2_timerview"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true"/>
+
+                        <ProgressBar
+                            android:id="@+id/progressbar1_timerview"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circleshape1_timerview"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true"/>
+
+                        <ImageView
+                            android:id="@+id/imageViewOtpVerified"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_tick"
+                            android:visibility="invisible"
+                            tools:ignore="ContentDescription"
+                            android:layout_centerInParent="true"/>
+
+
+                        <TextView
+                            android:id="@+id/textViewShowTime"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:alpha="0.6"
+                            android:background="@drawable/circleshape_timerview"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:ignore="SmallSp" />
+
+                        <!--<TextView
+                            android:id="@+id/textViewShowTime"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            android:visibility="visible"
+                            android:background="@drawable/circleshape_timerview"
+                            tools:ignore="ContentDescription,SmallSp"
+                            android:text="00:00"/>-->
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_weight="0.4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center">
+
+            <TextView
+                android:id="@+id/textViewCopyRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/copyright_message"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_weight="0.7">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+
+                <ImageView
+                    android:id="@+id/imageViewSubmitDetails"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/submit_details_button_ui"
+                    tools:ignore="ContentDescription,UnusedAttribute"
+                    android:onClick="submitPersonalNumber"/>
+
+                <ImageView
+                    android:id="@+id/imageViewRegister"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/register_button_ui"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription,UnusedAttribute"
+                    android:onClick="registerDetailsToAppServer"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>-->
+
+    </LinearLayout>
+</RelativeLayout>

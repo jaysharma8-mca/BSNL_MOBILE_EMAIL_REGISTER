@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/me_reg_search_subscriber_ui"
+                    android:contentDescription="@string/todo" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/search_subscriber_font_ui"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false"
+                tools:ignore="UselessParent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    tools:ignore="NestedWeights,UselessParent">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/std_code">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextAreaCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="5dp"
+                            android:digits="0123456789"
+                            android:drawablePadding="5dp"
+                            android:inputType="number"
+                            android:drawableLeft="@drawable/area_code"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBackground"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:ignore="UselessParent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/phone_no">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextLLNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:digits="0123456789"
+                            android:drawablePadding="5dp"
+                            android:inputType="number"
+                            android:drawableLeft="@drawable/ic_landline"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBackground"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.65"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/imageViewSearch"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/search_subscriber_icon"
+                        android:contentDescription="@string/todo"
+                        android:onClick="searchSubscriberTask"/>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/customer_name">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="5dp"
+                        android:focusable="false"
+                        android:drawableLeft="@drawable/ic_customer_name"
+                        android:inputType="textCapWords"
+                        android:paddingLeft="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/address">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="5dp"
+                        android:focusable="false"
+                        android:drawableLeft="@drawable/ic_address_wl"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false"
+                tools:ignore="UselessParent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    tools:ignore="NestedWeights,UselessParent">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/emailid">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextMailId"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:digits="qwertyuiopasdfghjklzxcvbnm0123456789.!#$%&amp;'*+-/=?^_`{|"
+                            android:focusable="false"
+                            android:maxLines="1"
+                            android:drawableLeft="@drawable/ic_email"
+                            android:drawablePadding="5dp"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBackground"
+                            android:maxLength="64"
+                            android:textAllCaps="false"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,LabelFor,RtlHardcoded,RtlSymmetry,TextFields"
+                            tools:targetApi="lollipop"
+                            android:paddingLeft="10dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:contentDescription="@string/todo"
+                    android:focusable="false"
+                    android:text="@string/at"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="Autofill,LabelFor" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:ignore="UselessParent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/domian">
+
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/editTextMailDomains"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:digits="qwertyuiopasdfghjklzxcvbnm."
+                            android:drawableLeft="@drawable/ic_domain"
+                            android:drawablePadding="5dp"
+                            android:inputType="textCapWords"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textAllCaps="false"
+                            android:dropDownWidth="250sp"
+                            android:focusable="false"
+                            android:textColor="@color/colorBackground"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:hint="@string/mobile_number">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:digits="1234567890"
+                        android:focusable="false"
+                        android:inputType="number"
+                        android:drawableLeft="@drawable/ic_smartphone"
+                        android:drawablePadding="5dp"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,LabelFor,RtlSymmetry"
+                        tools:targetApi="lollipop"
+                        android:drawableStart="@drawable/ic_smartphone"
+                        android:paddingStart="10dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="5dp">
+
+                    <Spinner
+                        android:id="@+id/spinner_search_subscriber"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/spinner_background"
+                        android:drawSelectorOnTop="true" />
+
+                </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxGoGreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="true"
+                    android:text="@string/go_green"
+                    android:textColor="#59A869"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:targetApi="lollipop"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent"
+                android:baselineAligned="false"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    tools:ignore="NestedWeights,UselessParent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_1_2"
+                        android:layout_centerVertical="true"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/imageViewNextPage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/next_page_arrow"
+                        android:contentDescription="@string/todo"
+                        android:layout_alignParentRight="true"
+                        android:onClick="NavigateToClosureActivity"/>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

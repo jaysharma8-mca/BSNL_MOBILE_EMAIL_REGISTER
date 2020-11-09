@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="8dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="10dp"
+    card_view:cardElevation="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:selectableItemBackground"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/textViewMobileLLNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:textColor="#5a5c5c"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_landline_wl"
+                android:drawableLeft="@drawable/ic_mobile_wl"
+                android:gravity="center_vertical"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="5dp"/>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#C9C0C0"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/textViewMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:textColor="#5a5c5c"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_mobile_wl"
+                android:drawableLeft="@drawable/ic_mobile_wl"
+                android:gravity="center_vertical"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="10dp"/>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#C9C0C0"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/textViewEmailId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
+                android:textColor="#5a5c5c"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_email"
+                android:drawableLeft="@drawable/ic_mobile_wl"
+                android:gravity="center_vertical"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="5dp" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#C9C0C0"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="#5a5c5c"
+                    android:textSize="15sp"
+                    android:text="@string/sync_status"
+                    android:textStyle="bold"
+                    android:drawableStart="@drawable/ic_sync_offline_list"
+                    android:drawableLeft="@drawable/ic_sync_offline_list"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <ImageView
+                    android:id="@+id/imgSync"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@string/todo"
+                    android:layout_marginBottom="5dp"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="0.01">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewKYCdoc"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ic_go_green_image"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

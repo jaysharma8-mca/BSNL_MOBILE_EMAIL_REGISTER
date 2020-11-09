@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mobileemail_register">
+
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_mereg_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_mereg_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="com.mobileemail_register.SPLASH_SCREEN_ACTIVITY.SplashScreen_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mobileemail_register.LOGIN_ACTIVITY.LoginPage_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.REGISTRATION_ACTIVITY.RegistrationPage_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.DASHBOARD_ACTIVITY.DashBoard_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.SEARCH_SUBSCRIBER_ACTIVITY.SearchSubscriber_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.SDEFIELDLIST_ACTIVITY.SdeFieldList_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.CLOSURE_ACTIVITY.Closure_Activity"
+            android:label="CLOSURE PAGE"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity
+            android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.LinemanWorklist_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.SYNC_UNSYNC_ACTIVITY.UnsyncdData_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.SDEFIELDLIST_ACTIVITY.SdeFieldListConfigureLm_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.SDEFIELDLIST_ASSIGNED_ACTIVITY.SdeFieldListGetAssignedReport_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.LinemanWorklistDashBoard_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.INFO_ACTIVITY.INFO_ACTIVITY"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.Co_List_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.Co_Rejected_List_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.Co_Pending_List_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name="com.mobileemail_register.LINEMAN_WL_ACTIVITY.Co_Approved_List_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="InnerclassSeparator" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="71f03bf15849c07727a5badb0dac61c19e0fe834" />
+
+        <receiver
+            android:name="com.mobileemail_register.MISC.DeviceBootReceiver"
+            android:enabled="true"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.mobileemail_register.MISC.NetworkMonitor"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="InnerclassSeparator"/>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+
+
+</manifest>

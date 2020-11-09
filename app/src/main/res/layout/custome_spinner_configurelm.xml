@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textview_spinner"
+    style="?android:attr/spinnerItemStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    android:textColor="@color/colorBackground"
+    android:singleLine="true"
+    android:text="SELECT LMC"
+    android:ellipsize="end"
+    android:layout_marginRight="30dp"
+    android:layout_marginEnd="30dp" />

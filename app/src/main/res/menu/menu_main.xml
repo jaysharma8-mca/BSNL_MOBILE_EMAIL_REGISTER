@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="info.androidhive.recyclerviewsearch.MainActivity">
+
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="100"
+        android:title="@string/search"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
+        android:id="@+id/sort_data"
+        android:icon="@drawable/sort_icon"
+        android:orderInCategory="100"
+        android:title="@string/sort"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+
+
+   <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_show_all_data"
+        android:title="@string/show_all_data"
+        app:showAsAction="always" />
+
+    <!--<item
+        android:id="@+id/action_offline"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_add_circle_outline_black_24dp"
+        android:title="@string/offline_data"
+        app:showAsAction="never" />-->
+    <!--<item
+        android:id="@+id/last_sync_info"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/last_sync_info"/>-->
+
+
+   <!-- <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_sync"
+        android:title="@string/refresh"
+        app:showAsAction="always" />-->
+
+
+
+
+
+
+</menu>

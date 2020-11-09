@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:selectableItemBackground"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="10dp"
+    tools:targetApi="lollipop">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/lineaLayoutOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/getPHONE_NO"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_landline_wl"
+                android:drawableLeft="@drawable/ic_landline_wl"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBackground"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+
+            <TextView
+                android:id="@+id/getMOBILE_NO"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_mobile_app"
+                android:drawableLeft="@drawable/ic_mobile_app"
+                android:drawablePadding="10dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBackground"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/lineaLayoutOne"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="190dp"
+            android:layout_marginRight="190dp"
+            android:background="#C9C0C0" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/lineaLayoutOne"
+            android:layout_marginStart="220dp"
+            android:layout_marginLeft="220dp"
+            android:background="#C9C0C0" />
+
+        <LinearLayout
+            android:id="@+id/lineaLayoutTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/view2">
+
+            <TextView
+                android:id="@+id/getUpdatedOn"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_rotation"
+                android:drawableLeft="@drawable/ic_rotation"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBackground"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+
+            <TextView
+                android:id="@+id/getCoApprovedDate"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_calendar"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="10dp"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBackground"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+        </LinearLayout>
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/lineaLayoutTwo"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="190dp"
+            android:layout_marginRight="190dp"
+            android:background="#C9C0C0" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/lineaLayoutTwo"
+            android:layout_marginStart="220dp"
+            android:layout_marginLeft="220dp"
+            android:background="#C9C0C0" />
+
+
+        <TextView
+            android:id="@+id/textViewgetEmail"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_below="@id/view4"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorBackground"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/textViewgetEmail"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+
+            android:background="#C9C0C0" />
+
+
+        <TextView
+            android:id="@+id/coRemarks"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_below="@id/view5"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_remarks"
+            android:drawableLeft="@drawable/ic_remarks"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorBackground"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

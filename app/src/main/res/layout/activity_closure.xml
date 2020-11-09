@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false"
+                tools:ignore="UselessParent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights,UselessParent">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/landline_no">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextLLNO"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="5dp"
+                            android:digits="0123456789"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:drawableLeft="@drawable/ic_landline"
+                            android:drawablePadding="5dp"
+                            android:inputType="textCapWords"
+                            android:focusable="false"
+                            android:textColor="@color/colorBackground"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.5"
+                    tools:ignore="UselessParent">
+
+                    <ImageView
+                        android:id="@+id/imageViewCall"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_phone_call"
+                        android:contentDescription="@string/todo"
+                        android:onClick="callCustomerActivity"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:ignore="UselessParent">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="@string/mobile_number">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextMobileNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:digits="0123456789"
+                            android:scrollHorizontally="true"
+                            android:drawableLeft="@drawable/ic_smartphone"
+                            android:drawablePadding="5dp"
+                            android:inputType="textCapWords"
+                            android:paddingLeft="4dp"
+                            android:singleLine="true"
+                            android:focusable="false"
+                            android:textColor="@color/colorBackground"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:ignore="Autofill,RtlHardcoded,RtlSymmetry,TextFields" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="@string/emailid">
+
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/editTextMailId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@android:color/transparent"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="5dp"
+                    android:focusable="false"
+                    android:textColor="@color/colorBackground"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="Autofill,LabelFor,RtlHardcoded,RtlSymmetry,TextFields"
+                    tools:targetApi="lollipop" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="@string/go_green"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp">
+
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/editTextGoGreen"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:drawableStart="@drawable/ic_go_green"
+                        android:drawableLeft="@drawable/ic_go_green"
+                        android:drawablePadding="5dp"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:focusable="false"
+                        android:textColor="@color/colorBackground"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,LabelFor,RtlSymmetry"
+                        tools:targetApi="lollipop" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="@string/update_type"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp">
+
+
+                   <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/editTextUpdateType"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_update_type"
+                        android:drawableLeft="@drawable/ic_update_type"
+                        android:drawablePadding="5dp"
+                        android:focusable="false"
+                        android:textColor="@color/colorBackground"
+                        android:inputType="number"
+                        android:scrollHorizontally="true"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="Autofill,LabelFor,RtlSymmetry"
+                        tools:targetApi="lollipop"
+                       android:paddingRight="5dp"
+                       android:paddingEnd="5dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/closure_activity_shape"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:gravity="center">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp">
+
+                    <com.chaos.view.PinView
+                        android:id="@+id/editTextVerificationCode"
+                        style="@style/PinWidget.PinView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="true"
+                        android:inputType="number"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:itemCount="4"
+                        app:itemHeight="30dp"
+                        app:itemSpacing="5dp"
+                        app:itemWidth="30dp"
+                        app:background="@drawable/shape_alert_dialogbox"
+                        app:viewType="rectangle"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:layout_margin="10dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textViewCodeVerified"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/todo"
+                            android:text="@string/code_verified"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBackground"
+                            android:visibility="invisible"/>
+
+                        <ImageView
+                            android:id="@+id/imageViewResendCode"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="25dp"
+                            android:background="@drawable/resend_sms_code"
+                            android:contentDescription="@string/todo"
+                            android:visibility="invisible"
+                            android:onClick="resendSmsVerificationCode" />
+
+                        <ImageView
+                            android:id="@+id/imageViewSendCode"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="25dp"
+                            android:background="@drawable/send_sms"
+                            android:contentDescription="@string/todo"
+                            android:visibility="visible"
+                            android:onClick="sendSmsVerificationCode" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:ignore="UselessParent">
+
+                        <ProgressBar
+                            android:id="@+id/progressbar_timerview"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circleshape2_timerview"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true"/>
+
+                        <ProgressBar
+                            android:id="@+id/progressbar1_timerview"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circleshape1_timerview"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true"/>
+
+                        <ImageView
+                            android:id="@+id/imageViewOtpVerified"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_tick"
+                            android:visibility="invisible"
+                            tools:ignore="ContentDescription"
+                            android:layout_centerInParent="true"/>
+
+
+                        <TextView
+                            android:id="@+id/textViewShowTime"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:alpha="0.6"
+                            android:background="@drawable/circleshape_timerview"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:ignore="SmallSp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/closure_activity_shape">
+
+                <TextView
+                    android:id="@+id/textViewMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/click_to_upload_dkyc_document"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageViewDKYCDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="247dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/closure_activity_shape"
+                    android:padding="10dp"
+                    tools:ignore="ContentDescription"
+                    android:onClick="selectImageFromMobile"/>
+
+
+
+                <ImageView
+                    android:id="@+id/imageViewDeleteButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/imageViewDKYCDocument"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ic_delete"
+                    android:onClick="deleteKYDDocument"
+                    tools:ignore="ContentDescription" />
+
+
+                <TextView
+                    android:id="@+id/textViewImageSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageViewDKYCDocument"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardElevation="5dp">
+
+                <Spinner
+                    android:id="@+id/spinnerDKYCDocumentsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/spinner_background"
+                    android:drawSelectorOnTop="true" />
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBoxKyc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorPrimary"
+                    tools:targetApi="lollipop"
+                    android:onClick="validationKYCCheckbox"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/self_declaration_statement"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@id/checkBoxKyc"
+                    android:layout_toEndOf="@id/checkBoxKyc" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/buttonSubmitDetails"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/submit_details_button_ui"
+                    android:onClick="submitDetailsToAppServer"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:contentDescription="@string/todo" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

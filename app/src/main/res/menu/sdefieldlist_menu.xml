@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="info.androidhive.recyclerviewsearch.MainActivity">
+
+
+   <!-- <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="100"
+        android:title="@string/search"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        tools:ignore="AlwaysShowAction" />-->
+
+    <!-- <item
+         android:id="@+id/display_data"
+         android:icon="@drawable/sort_icon"
+         android:orderInCategory="100"
+         android:title="@string/sort"
+         app:showAsAction="always"
+         tools:ignore="AlwaysShowAction" />-->
+
+
+
+    <!-- <item
+         android:id="@+id/action_add"
+         android:icon="@drawable/ic_add_circle_outline_black_24dp"
+         android:title="@string/add_new_data"
+         app:showAsAction="never" />-->
+
+    <!--<item
+        android:id="@+id/action_offline"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_add_circle_outline_black_24dp"
+        android:title="@string/offline_data"
+        app:showAsAction="never" />-->
+
+
+
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_sync"
+        android:title="@string/refresh"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
+    <!--<item
+        android:id="@+id/action_upload"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_unarchive_black_24dp"
+        android:title="@string/refresh"
+        android:visible="true"
+        app:showAsAction="always" />-->
+
+</menu>

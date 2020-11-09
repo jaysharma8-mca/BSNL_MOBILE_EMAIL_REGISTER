@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Bottombaritemtwo"
+        android:icon="@drawable/ic_my_profile"
+        android:title="My Profile"></item>
+
+    <item
+        android:id="@+id/Bottombaritemthree"
+        android:icon="@drawable/ic_other_issues"
+        android:title="Other Issues"></item>
+</menu>

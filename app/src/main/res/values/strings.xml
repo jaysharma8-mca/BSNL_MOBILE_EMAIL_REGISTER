@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">MEREG GO GREEN APP</string>
+    <string name="app_version">V 1.0</string>
+    <string name="todo">todo</string>
+    <string name="personal_number">PERSONAL NUMBER</string>
+    <string name="copyright_message">COPYRIGHT © 2019 ITPC.  \nAll RIGHTS RESERVED</string>
+    <string name="std_code">STD CODE</string>
+    <string name="landline_no">LANDLINE NO</string>
+    <string name="customer_name">CUSTOMER NAME</string>
+    <string name="address">ADDRESS</string>
+    <string name="emailid">EMAILID</string>
+    <string name="domian">DOMIAN</string>
+    <string name="at">\@</string>
+    <string name="mobile_number">MOBILE NUMBER</string>
+    <string name="_1_2">1/2</string>
+    <string name="go_green">GO GREEN</string>
+    <string name="click_to_upload_dkyc_document">Click To Upload DKYC Document</string>
+    <string name="self_declaration_statement">I hereby certify that I have physically met and \nverified credentials of the subscriber with his/her KYC document.</string>
+    <string name="user_registration">User Registration</string>
+    <string name="dear_user_kindly_enter_your_personal_number">Dear User Kindly Enter Your Personal Number</string>
+    <string name="employee_name">EMPLOYEE NAME</string>
+    <string name="data_submit_registration_page">Submitting Data… Please Wait…</string>
+    <string name="data_verify_registration_page">Registering… Please Wait…</string>
+    <string name="login_dialog_box">Logging In… Please Wait…</string>
+    <string name="search_data">Searching… Please Wait…</string>
+    <string name="update_type">UPDATE TYPE</string>
+    <string name="send_sms_code">Sending Verification Code… Please Wait…</string>
+    <string name="code_verified">Code Verified</string>
+    <string name="captured_image">CAPTURED IMAGE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="ok">OK</string>
+    <string name="rendering_image_please_wait">Rendering Image… Please Wait…</string>
+    <string name="uploading_data_please_wait">Uploading Data… Please Wait…</string>
+    <string name="loading_data_please_wait">Loading Data… Please Wait…</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="last_sync_info">Last Sync Info</string>
+    <string name="sync_offline_data">Syncing Data… PLease Wait…</string>
+    <string name="sync_status">Sync Status</string>
+    <string name="data_deletion_from_db">Deleting Data… Please Wait…</string>
+    <string name="clear_offline_data_alert">Clear Uploaded Offline Data</string>
+    <string name="sort">sort</string>
+    <string name="configure_linemane">CONFIGURE LINEMAN</string>
+    <string name="asign_task">ASIGN TASK</string>
+    <string name="data_fetching">Fetching Data… Please Wait…</string>
+    <string name="data_deassignment">Deassigning Data… Please Wait…</string>
+    <string name="sub_division_worklist">Sub Division Worklist</string>
+    <string name="get_values">Get Values</string>
+    <string name="submit_data">SUBMIT DATA</string>
+    <string name="name">NAME</string>
+    <string name="designation">DESIGNATION</string>
+    <string name="reg_mobile_number">REG. MOBILE NUMBER</string>
+    <string name="sde_worklist">SDE WORKLIST</string>
+    <string name="get_assigned_report">GET ASSIGNED REPORT</string>
+    <string name="pms">PMS:</string>
+    <string name="pending">PENDING</string>
+    <string name="finished">FINISHED</string>
+    <string name="x">X</string>
+    <string name="alm_count">ALM COUNT</string>
+    <string name="primary_lmc">PRIMARY LMC</string>
+    <string name="personal_num">PERSONAL NUM</string>
+    <string name="lm_code">LM CODE</string>
+    <string name="p">P</string>
+    <string name="c">C</string>
+    <string name="assign_lm">ASSIGN LM</string>
+    <string name="assigned_lmc">ASSIGNED LMC</string>
+    <string name="assignment_date">ASSIGNMENT DATE</string>
+    <string name="assigned_lm">ASSIGNED LM</string>
+    <string name="sort_data_pillarwise">SORT DATA PILLARWISE</string>
+    <string name="phone_no">PHONE NO</string>
+    <string name="lineman_code">LINEMAN CODE</string>
+    <string name="assigned_count">ASSIGNED COUNT</string>
+    <string name="lm_dashboard">LM DASHBOARD</string>
+    <string name="area_code">AREA CODE</string>
+    <string name="exch_code">EXCH CODE</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">DOCUMENT LIST\nINFORMATIION</string>
+    <string name="slide_1_desc">1) AUTHORIZED COMPANY LETTER \n2) SHOP ACT LICENCE \n3) GRAMPANCHAYAT NOC \n4) RENT AGREEMENT</string>
+
+    <string name="slide_2_title">CUSTOMER UPDATE\nTYPE INFORMATION</string>
+    <string name="slide_2_desc">FOR UPDATE TYPE EMAIL AND GO-GREEN, NO DKYC DOCUMENT AND DOCUMENT TYPE FROM DROP-DOWN LIST IS REQUIRED</string>
+
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="for_documents">FOR DOCUMENTS LISTED BELOW</string>
+    <string name="documents_info">PROPER DOCUMENTS WITH PHOTO ID PLACED UPON THE ABOVE MENTIONED DOCUMENTS IS NECESSARY ELSE IT WILL BE REJECTED BY CO.</string>
+    <string name="approved_list">APPROVED LIST</string>
+    <string name="pending_list">PENDING LIST</string>
+    <string name="rejected_list">REJECTED LIST</string>
+    <string name="press_sync_button_to_load_data">PRESS SYNC BUTTON TO LOAD DATA</string>
+    <string name="pending_count">PENDING COUNT</string>
+    <string name="co_worklist">CO WORKLIST</string>
+    <string name="show_all_data">show all data</string>
+    <string name="bharat_sanchar_nigam_ltd">BHARAT SANCHAR NIGAM LTD.</string>
+
+
+</resources>

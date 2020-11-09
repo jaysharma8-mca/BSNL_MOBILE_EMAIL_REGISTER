@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SDEFIELDLIST_ACTIVITY.SdeFieldList_Activity"
+    android:background="#DFEBFA"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="NewApi">
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="NewApi">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/colorBackground"
+            android:onClick="configureLinemanActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/textViewMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginRight="20sp"/>
+
+            <TextView
+                android:id="@+id/textViewPMS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="@string/pms"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_toLeftOf="@id/textViewPMSData"
+                android:layout_toStartOf="@id/textViewPMSData">
+            </TextView>
+
+                <TextView
+                    android:id="@+id/textViewPMSData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginRight="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20sp"
+                    tools:ignore="RelativeOverlap">
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:onClick="configureLinemanActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewAssignment"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/ic_assignment"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/textViewAssignData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageViewAssignment"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:text="@string/configure_linemane"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorBackground"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:layout_below="@id/textViewAssignData">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#FFDEDEDE" />
+
+                    <TextView
+                        android:id="@+id/textViewttlcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:layout_toStartOf="@id/textView4"
+                        android:layout_toLeftOf="@id/textView4"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="12dp"
+                        android:textStyle="bold"
+                        android:text="@string/pending"
+                        tools:ignore="RelativeOverlap" />
+
+                    <TextView
+                        android:id="@+id/textViewTTLCon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:layout_toStartOf="@id/textView4"
+                        android:layout_toLeftOf="@id/textView4"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:textStyle="bold"
+                        android:layout_below="@id/textViewttlcon"
+                        tools:ignore="RelativeOverlap"/>
+
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="2dp"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/view"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/style_stroke_login_page" />
+
+
+                    <TextView
+                        android:id="@+id/textViewtgt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:layout_toEndOf="@id/textView4"
+                        android:layout_toRightOf="@id/textView4"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="12dp"
+                        android:textStyle="bold"
+                        android:text="@string/finished"/>
+
+
+                    <TextView
+                        android:id="@+id/textViewTGT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:layout_toEndOf="@id/textView4"
+                        android:layout_toRightOf="@id/textView4"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_below="@id/textViewtgt"
+                        android:textStyle="bold"/>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#C9C0C0"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp"/>
+
+
+    </LinearLayout>
+-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:onClick="assignTaskToLmActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageViewWorkList"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/ic_worklist"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/textViewAssignTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageViewWorkList"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:text="@string/get_assigned_report"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorBackground"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:layout_below="@id/textViewAssignTask">
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#FFDEDEDE" />
+
+
+                    <TextView
+                        android:id="@+id/textViewAssignedCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/view1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="15dp"
+                        android:textStyle="bold"/>
+
+
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+
+
+
+    <!--<androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="NewApi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:text="Welcome: Sandeep Lakkad"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Performance: 79%"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp" />
+
+    </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardElevation="15dp"
+                app:cardBackgroundColor="@color/colorBackground"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:text="Sub Division Worklist"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"/>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+       <TableRow
+                android:background="@drawable/table_layout_border"
+                android:padding="5dp"
+                android:showDividers="middle"
+                android:divider="@drawable/table_dividers">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Name Of Lineman"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Target"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Completed"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/table_layout_cell_borders"
+                android:padding="5dp"
+                android:divider="@drawable/table_dividers"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Lineman 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="135"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="105"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/table_layout_cell_borders"
+                android:padding="5dp"
+                android:divider="@drawable/table_dividers"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Lineman 2"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="140"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="103"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/table_layout_cell_borders"
+                android:padding="5dp"
+                android:divider="@drawable/table_dividers"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Lineman 3"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="185"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="155"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBackground"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"/>
+            </TableRow>
+        </TableLayout>
+
+
+    </LinearLayout>-->
+</LinearLayout>
