@@ -21,9 +21,9 @@ import java.util.List;
 
 public class SdeConfiguredLm_Adapter extends RecyclerView.Adapter<SdeConfiguredLm_Adapter.MyViewHolder> implements Filterable {
 
-    private List<SdeConfiguredLm_ReportClass> configureLmList;
+    private final List<SdeConfiguredLm_ReportClass> configureLmList;
     private List<SdeConfiguredLm_ReportClass> configureLmListFiltered;
-    private SdeConfiguredLm_Adapter.ContactsAdapterListener listener;
+    private final SdeConfiguredLm_Adapter.ContactsAdapterListener listener;
 
 
     public Context context;
@@ -50,22 +50,16 @@ public class SdeConfiguredLm_Adapter extends RecyclerView.Adapter<SdeConfiguredL
 
 
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // send selected contact in callback
-                    listener.onContactSelected(configureLmListFiltered.get(getAdapterPosition()));
-                }
+            view.setOnClickListener(view12 -> {
+                // send selected contact in callback
+                listener.onContactSelected(configureLmListFiltered.get(getAdapterPosition()));
             });
 
-            view.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
+            view.setOnLongClickListener(view1 -> {
 
-                    //listener.onContactSelected(configureLmListFiltered.get(getAdapterPosition()));
-                    //view.setBackgroundColor(ContextCompat.getColor(context, R.color.test));
-                    return false;
-                }
+                //listener.onContactSelected(configureLmListFiltered.get(getAdapterPosition()));
+                //view.setBackgroundColor(ContextCompat.getColor(context, R.color.test));
+                return false;
             });
         }
     }
