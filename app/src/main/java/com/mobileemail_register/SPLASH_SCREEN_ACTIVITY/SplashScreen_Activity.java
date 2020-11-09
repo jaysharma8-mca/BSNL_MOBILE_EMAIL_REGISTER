@@ -25,7 +25,7 @@ public class SplashScreen_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        AppCenter.start(getApplication(), "15ee0d52-7eb0-4aa2-9ec5-40b1491add0e",
+        AppCenter.start(getApplication(), "f7271b3f-27aa-4985-8654-37f1347f4bf4",
                 Analytics.class, Crashes.class);
 
         ImageView image_splash_screen = findViewById(R.id.image_splash_screen);
